@@ -10,7 +10,6 @@ class SaveImage extends StatefulWidget {
   var filename="";
   SaveImage({required this.photo,required this.filename});
 
-
   @override
   State<SaveImage> createState() => _SaveImageState();
 }

@@ -6,7 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'LoginScreen.dart';
 
 class SplashScreen extends StatefulWidget {
-  
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();

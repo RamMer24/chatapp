@@ -1,4 +1,5 @@
 import 'package:chatapp/screen/LoginScreen.dart';
+import 'package:chatapp/screen/Pdf.dart';
 import 'package:chatapp/screen/SaveImage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -17,7 +18,7 @@ void main()async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget{
   const MyApp({super.key});
 
   @override
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home:LoginScreen(),
+      home:Pdf(),
     );
   }
 }

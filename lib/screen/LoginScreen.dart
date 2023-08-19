@@ -9,19 +9,19 @@ class LoginScreen extends StatefulWidget {
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
-}
+ }
 
-class _LoginScreenState extends State<LoginScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+   class _LoginScreenState extends State<LoginScreen> {
+    @override
+     Widget build(BuildContext context) {
+      return Scaffold(
       appBar: AppBar(
         title: Text("Login")
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () async{
-              FirebaseAuth auth = FirebaseAuth.instance;
+            FirebaseAuth auth = FirebaseAuth.instance;
               User? user;
               final GoogleSignIn googleSignIn = GoogleSignIn();
               final GoogleSignInAccount? googleSignInAccount =
@@ -33,10 +33,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   accessToken: googleSignInAuthentication.accessToken,
                   idToken: googleSignInAuthentication.idToken,
                 );
+
                 UserCredential userCredential =
                 await auth.signInWithCredential(credential);
                 user = userCredential.user;
-
                 var name = user!.displayName.toString();
                 var email = user!.email.toString();
                 var googleid = user!.uid.toString();
@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             "email":email,
                             "uid":googleid,
                             "Photo":photo,
-                          }).then((document) async{
+                          }).then((document) async {
                             SharedPreferences prefs = await SharedPreferences.getInstance();
                             prefs.setString("islogin", "yes");
                             prefs.setString("senderid", document.id.toString());
@@ -87,4 +87,5 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
 }
